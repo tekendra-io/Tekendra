@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>First JavaScript Project</h1>
+    <button onclick="tech()">Click here</button>
+    <p id="hello"></p>
+    <button type="button" onclick="techre()">Check Date</button>
+    <p id="hello2"></p>
+    <script>
+        const user ="Tekendra";
+        function tech(){
+            document.getElementById("hello").innerHTML="This is the first JavaScript Project";
+        }
+        
+        function techre(){
+            document.getElementById("hello2").innerHTML = "Hi" + user +",today is" + Date();
+        }
+    </script>
+</body>
+</html>
