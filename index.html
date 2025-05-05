@@ -17,7 +17,7 @@ body {
 }
 
 nav {
-    background-color: #222;
+    background-color: #ff1919;
     padding: 20px 50px;
     display: flex;
     justify-content: space-between;
@@ -66,10 +66,23 @@ ul li a::after {
 ul li a:hover::after {
     width: 100%;
 }
+
 @media(max-width:550px){
     .hamburger{
         display: flex;
     }
+
+    .nav-Links ul{
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        width: 200px;
+    }
+    
+
 }
 
     /*/.hamburger{
@@ -96,7 +109,7 @@ ul li a:hover::after {
 
   <nav>
     <div class="logo">Frontend</div>
-    <ul>
+    <ul class="nav-Links" id="navLinks">
       <li><a href="#">Home</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Projects</a></li>
@@ -108,6 +121,6 @@ ul li a:hover::after {
         <span class="burger"></span>
     </div>
   </nav>
-
+<script src="script.js"></script>
 </body>
 </html>
