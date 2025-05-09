@@ -13,11 +13,11 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #f5f5f5;
+    background: #dddbdb;
 }
 
 nav {
-    background-color: #ff1919;
+    background-color: rgb(0, 0, 0);
     padding: 20px 50px;
     display: flex;
     justify-content: space-between;
@@ -32,6 +32,21 @@ nav {
     font-weight: bold;
     letter-spacing: 2px;
 }
+
+@keyframes colorChange {
+  0% { color: red; }
+  50% { color: blue; }
+  100% { color: green; }
+}
+
+.logo{
+  animation: colorChange 3s infinite;
+}
+
+/* @keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+} */
 
 ul {
     list-style: none;
@@ -81,7 +96,23 @@ ul li a:hover::after {
         right: 20px;
         width: 200px;
     }
-    
+    .nav-Links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    background: #fff;
+    height: 3px;
+    width: 25px;
+    margin: 4px;
+    border-radius: 3px;
+  }
 
 }
 
@@ -103,6 +134,38 @@ ul li a:hover::after {
       margin: 6px 0;
       border-radius: 2px;
     }/*/
+    .image-row {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      /* border-radius: 4px; */
+    }
+
+    .image-block {
+      text-align: center;
+      width: 200px;
+      background-color:#d2d6d6;
+      /* border-radius: 4px; */
+      border: 1px solid black;
+    }
+
+    .image-block img {
+      width: 100%;
+      height: auto;
+      /* border-radius: 4px; */
+      display: block;
+    }
+
+    .caption {
+      margin-top: 8px;
+      font-size: 16px;
+      /* background-color:#bfe5e7; */
+    }
+    /* img{
+      border-radius: 50%;
+      width: 100%;
+      height: auto;
+    } */
   </style>
 </head>
 <body>
@@ -121,6 +184,23 @@ ul li a:hover::after {
         <span class="burger"></span>
     </div>
   </nav>
-<script src="script.js"></script>
+  <br>
+  <br>
+  <div class="image-row">
+    <div class="image-block">
+      <img src="img.jpg" alt="Image 1">
+      <p class="caption"> To display images in a row, each in its own block with text underneath, you can use HTML and CSS flexbox.</p>
+    </div>
+    <div class="image-block">
+      <img src="img.jpg" alt="Image 2">
+      <p class="caption">To display images in a row, each in its own block with text underneath, you can use HTML and CSS flexbox.</p>
+    </div>
+    <div class="image-block">
+      <img src="img.jpg" alt="Image 3">
+      <p class="caption">To display images in a row, each in its own block with text underneath, you can use HTML and CSS flexbox.</p>
+    </div>
+  </div>
+  
+<script src="script.js"></script> 
 </body>
 </html>

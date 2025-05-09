@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Decorated Navbar + Brave Style</title>
+  <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #dddbdb;
+}
+
+nav {
+    background-color: rgb(0, 0, 0);
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-radius: 4px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    animation: colorChange 3s infinite;
+}
+
+@keyframes colorChange {
+  0% { color: red; }
+  50% { color: blue; }
+  100% { color: green; }
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding-left: 700px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+ul li a:hover {
+    color: #00adb5;
+}
+
+ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #00adb5;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+ul li a:hover::after {
+    width: 100%;
+}
+
+@media(max-width:550px){
+    .hamburger{
+        display: flex;
+    }
+
+    .nav-Links ul{
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        width: 200px;
+    }
+    .nav-Links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .hamburger span {
+        background: #fff;
+        height: 3px;
+        width: 25px;
+        margin: 4px;
+        border-radius: 3px;
+    }
+}
+
+.hamburger span{
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color:#f5f5f5;
+    margin: 5px auto;
+}
+
+/* Image row styling */
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.image-block {
+    text-align: center;
+    width: 200px;
+    background-color:#d2d6d6;
+    border: 1px solid black;
+}
+
+.image-block img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px auto 10px;
+    display: block;
+}
+
+.caption {
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+/* Brave style popup */
+.popup {
+    max-width: 500px;
+    margin: 60px auto;
+    background: #2a2a2a;
+    color: #fff;
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.popup-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.popup h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.popup p {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.popup a {
+    color: #ccc;
+    text-decoration: underline;
+}
+
+.btn {
+    margin-top: 20px;
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+.no-thanks {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.no-thanks:hover {
+    text-decoration: underline;
+}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Frontend</div>
+    <ul class="nav-Links" id="navLinks">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+        <span class="burger"></span>
+        <span class="burger"></span>
+        <span class="burger"></span>
+    </div>
+  </nav>
+<br>
+  <div class="image-row">
+    <div class="image-block">
+      <img src="img2.jpg" alt="Image 1">
+      <p class="caption">To display images in a row, each in its own block with text underneath, you can use HTML and CSS flexbox.</p>
+    </div>
+    <div class="image-block">
+      <img src="img2.jpg" alt="Image 2">
+      <p class="caption">To display images in a row, each in its own block with text underneath, you can use HTML and CSS flexbox.</p>
+    </div>
+    <div class="image-block">
+      <img src="img2.jpg" alt="Image 3">
+      <p class="caption">To display images in a row, each in its own block with text underneath, you can use HTML and CSS flexbox.</p>
+    </div>
+  </div>
+
+  <div class="popup">
+    <div class="popup-icon">📖</div>
+    <h2>Turn on Brave News, and never miss a story</h2>
+    <p>Follow your favorite sources, in a single feed. Just open a tab in Brave, scroll down, and... voilà!</p>
+    <p>Brave News is ad-supported with private, anonymized ads. <a href="#">Learn more.</a></p>
+    <button class="btn">Turn on Brave News</button>
+    <div class="no-thanks">No thanks</div>
+  </div>
+
+
+
+</body>
+</html>
