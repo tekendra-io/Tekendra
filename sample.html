@@ -13,11 +13,10 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #dddbdb;
+    background:  rgb(40, 164, 212);
 }
-
 nav {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(40, 164, 212);
     padding: 20px 50px;
     display: flex;
     justify-content: space-between;
@@ -55,7 +54,7 @@ ul li a {
 }
 
 ul li a:hover {
-    color: #00adb5;
+    color: #0045c5;
 }
 
 ul li a::after {
@@ -124,8 +123,9 @@ ul li a:hover::after {
 .image-block {
     text-align: center;
     width: 200px;
-    background-color:#d2d6d6;
+    background-color:#c8d6d6;
     border: 1px solid black;
+    border-radius: 4px;
 }
 
 .image-block img {
@@ -136,14 +136,23 @@ ul li a:hover::after {
     margin: 20px auto 10px;
     display: block;
 }
+.image-block:hover{
+  transform: translateY(-5px);
+  /* color: #00adb5; */
+  transition: all 0.3s ease;
+  background-color: #8ed4d8;
+}
 
 .caption {
     margin-top: 8px;
-    font-size: 16px;
+    font-size: 17px;
+    /* font-weight: bold; */
 }
-
+.image-block:hover img{
+  color: #00adb5;
+}
 /* Brave style popup */
-.popup {
+/* .popup {
     max-width: 500px;
     margin: 60px auto;
     background: #2a2a2a;
@@ -174,9 +183,9 @@ ul li a:hover::after {
 .popup a {
     color: #ccc;
     text-decoration: underline;
-}
+} */
 
-.btn {
+/* .btn {
     margin-top: 20px;
     background-color: #444;
     color: white;
@@ -186,9 +195,9 @@ ul li a:hover::after {
     font-weight: bold;
     cursor: pointer;
     width: 100%;
-}
+} */
 
-.btn:hover {
+/* .btn:hover {
     background-color: #555;
 }
 
@@ -201,7 +210,103 @@ ul li a:hover::after {
 
 .no-thanks:hover {
     text-decoration: underline;
+} */
+.nav-Links {
+  display: flex;
 }
+
+@media (max-width: 550px) {
+  .nav-Links {
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 10px;
+    width: 200px;
+  }
+
+  .nav-Links.active {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* .BMI-Calculator{
+  display: block;
+
+}
+.container{
+    justify-content: center;
+} */
+ .BMI-Calculator {
+  /* background: linear-gradient(135deg, #f0f4f8, #d9e2ec); */
+  padding: 40px 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.BMI-Calculator .container {
+  max-width: 400px;
+  margin: auto;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 1px solid black;
+}
+
+.BMI-Calculator h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 28px;
+}
+
+.BMI-Calculator input[type="number"] {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.BMI-Calculator input[type="number"]:focus {
+  border-color: #0077cc;
+  outline: none;
+}
+
+.BMI-Calculator button {
+  margin-top: 10px;
+  background-color: #0077cc;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.BMI-Calculator button:hover {
+  background-color: #005fa3;
+}
+
+.BMI-Calculator .result {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #222;
+  font-weight: bold;
+}
+
   </style>
 </head>
 <body>
@@ -224,27 +329,46 @@ ul li a:hover::after {
   <div class="image-row">
     <div class="image-block">
       <img src="img2.jpg" alt="Image 1">
+      <h3>Elon Musk</h3>
       <p class="caption">To display images in a row, each in its own block with text underneath, you can use HTML and CSS flexbox.</p>
     </div>
     <div class="image-block">
       <img src="img2.jpg" alt="Image 2">
+      <h3>Mark Zekerberg</h3>
       <p class="caption">To display images in a row, each in its own block with text underneath, you can use HTML and CSS flexbox.</p>
     </div>
     <div class="image-block">
       <img src="img2.jpg" alt="Image 3">
+      <h3>Bill Gates</h3>
       <p class="caption">To display images in a row, each in its own block with text underneath, you can use HTML and CSS flexbox.</p>
     </div>
   </div>
 
-  <div class="popup">
+  <!-- <div class="popup">
     <div class="popup-icon">📖</div>
     <h2>Turn on Brave News, and never miss a story</h2>
     <p>Follow your favorite sources, in a single feed. Just open a tab in Brave, scroll down, and... voilà!</p>
     <p>Brave News is ad-supported with private, anonymized ads. <a href="#">Learn more.</a></p>
     <button class="btn">Turn on Brave News</button>
     <div class="no-thanks">No thanks</div>
-  </div>
-
+  </div> -->
+  <!-- <section class="bmi-cal">
+    <div class="bmi-con"></div>
+  </section> -->
+<section class="BMI-Calculator">
+  <form class="container" id="bmicontainer">
+    <h2>BMI Calculator</h2>
+    <input type="number" id="weight" placeholder="Weight in kg"/>
+    <br>
+    <input type="number" id="height" placeholder="Height in cm"/>
+    <br />
+    <button onclick="calculateBMI()">Calculate</button>
+    <!-- <div class="result" id="result"></div> -->
+    <div class="result" id="result"></div>
+  </form>
+  <div class="result" id="result"></div>
+</section>
+<script src="script.js"></script>
 
 
 </body>
